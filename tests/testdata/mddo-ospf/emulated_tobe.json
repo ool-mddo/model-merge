@@ -196,7 +196,7 @@
                   "passive": false,
                   "timer": {
                     "hello-interval": 10,
-                    "dead-interval": 40,
+                    "dead-interval": 45,
                     "retransmission-interval": 5
                   },
                   "neighbor": [
