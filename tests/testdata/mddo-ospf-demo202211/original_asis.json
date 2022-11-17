@@ -494,7 +494,10 @@
               "router-id-source": "static",
               "log-adjacency-change": false,
               "redistribute": [
-
+                {
+                  "protocol": "connected",
+                  "metric-type": 2
+                }
               ]
             }
           },

@@ -497,6 +497,10 @@
                 {
                   "protocol": "connected",
                   "metric-type": 2
+                },
+                {
+                  "protocol": "static",
+                  "metric-type": 2
                 }
               ]
             }
