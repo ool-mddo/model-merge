@@ -21,6 +21,7 @@ def patch(original_asis, emulated_asis, emulated_tobe):
             return oa_item
         else:
             return _worker(oa_item, ea_item, et_item)
+
     def _worker(oa, ea, et):
         if isinstance(oa, dict):
             new_var = {}
@@ -34,6 +35,7 @@ def patch(original_asis, emulated_asis, emulated_tobe):
             else:
                 new_var = et
         return new_var
+
     return _worker(original_asis, emulated_asis, emulated_tobe)
 
 
@@ -52,18 +54,26 @@ def get_diff(original_asis, patched_original_asis):
             return (None, False), None, None
         else:
             return _worker(oa_item, poa_item), poa_key, oa_item[poa_key]
+
     def _worker(oa, poa):
         if isinstance(oa, dict):
             new_var = {}
             for k in oa.keys():
                 new_var[k], res = _worker(oa[k], poa[k])
-                if not(res):
+                if not (res):
                     new_var.pop(k)
             if len(new_var) != 0:
                 return new_var, True
         elif isinstance(oa, list):
-            new_var = list(map(lambda x: x[0][0] | {x[1]: x[2]}, 
-                filter(lambda x: x[0][1], [_list_worker(oa_item, poa) for oa_item in oa])))
+            new_var = list(
+                map(
+                    lambda x: x[0][0] | {x[1]: x[2]},
+                    filter(
+                        lambda x: x[0][1],
+                        [_list_worker(oa_item, poa) for oa_item in oa],
+                    ),
+                )
+            )
             if len(new_var) != 0:
                 return new_var, True
         else:
@@ -71,6 +81,7 @@ def get_diff(original_asis, patched_original_asis):
                 new_var = poa
                 return new_var, True
         return None, False
+
     return _worker(original_asis, patched_original_asis)[0]
 
 
@@ -97,13 +108,24 @@ def calc_reversed_diffs(diff, original_asis):
                 if k in ["network-id", "node-id", "tp-id", "router-id"]:
                     # skip "key" value
                     return prod, None
-                sub_prod, value = _worker(v, oa[k], diff | {"__original": oa[k], "__parent": parent})
+                sub_prod, value = _worker(
+                    v, oa[k], diff | {"__original": oa[k], "__parent": parent}
+                )
                 prod.extend(sub_prod)
                 if value is not None:
                     prod.append({k: value, "__original": oa[k], "__parent": parent})
             return prod, None
             # return list(map(lambda kv: {kv[0]: kv[1], "__original": oa, "__parent": parent}, diff.items()))
-            return list(map(lambda kv: {kv[0]: _worker(kv[1], oa[kv[0]], diff), "__original": "oa", "__parent": parent}, diff.items()))
+            return list(
+                map(
+                    lambda kv: {
+                        kv[0]: _worker(kv[1], oa[kv[0]], diff),
+                        "__original": "oa",
+                        "__parent": parent,
+                    },
+                    diff.items(),
+                )
+            )
         elif isinstance(diff, list):
             for item in diff:
                 sub_prod, value = _list_worker(item, oa, parent)
@@ -112,6 +134,7 @@ def calc_reversed_diffs(diff, original_asis):
             return prod, None
         else:
             return prod, diff
+
     return _worker(diff, original_asis, None)[0]
 
 
@@ -123,10 +146,19 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
             return rdiff["node-id"]
         else:
             return _get_node_id(rdiff["__parent"])
+
     def _get_os_type(original_asis, nodename):
-        L1topo = next(filter(lambda x: x["network-id"] == "layer1", original_asis["ietf-network:networks"]["network"]))
-        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))["mddo-topology:l1-node-attributes"]["os-type"]
-    def _get_key_names(rdiff, child = {}):
+        L1topo = next(
+            filter(
+                lambda x: x["network-id"] == "layer1",
+                original_asis["ietf-network:networks"]["network"],
+            )
+        )
+        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))[
+            "mddo-topology:l1-node-attributes"
+        ]["os-type"]
+
+    def _get_key_names(rdiff, child={}):
         STOP_KEYS = ["mddo-topology:ospf-area-termination-point-attributes"]
         if not child:
             # top-level (most detailed) diff
@@ -135,7 +167,12 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
             return _get_key_names(rdiff["__parent"], rdiff) + [key]
         else:
             contains = child.keys() - ["__original", "__parent"]
-            key = next(filter(lambda k: isinstance(rdiff[k], dict) and rdiff[k].keys() & contains, rdiff.keys()))
+            key = next(
+                filter(
+                    lambda k: isinstance(rdiff[k], dict) and rdiff[k].keys() & contains,
+                    rdiff.keys(),
+                )
+            )
             if key in STOP_KEYS:
                 return [key]
             else:
@@ -150,15 +187,18 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
     return node_id, ".".join(template_name)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("usage: merge.py COMMAND original_asis.json emulated_asis.json emulated_tobe.json")
+        print(
+            "usage: merge.py COMMAND original_asis.json emulated_asis.json emulated_tobe.json"
+        )
         print("COMMAND: patch, config")
         exit(1)
     _, command, original_asis_file, emulated_asis_file, emulated_tobe_file = sys.argv
     original_asis, emulated_asis, emulated_tobe = map(
         lambda filename: json.load(open(filename)),
-        [original_asis_file, emulated_asis_file, emulated_tobe_file])
+        [original_asis_file, emulated_asis_file, emulated_tobe_file],
+    )
 
     patched_original_asis = patch(original_asis, emulated_asis, emulated_tobe)
 
@@ -176,6 +216,11 @@ if __name__ == '__main__':
         rdiffs = calc_reversed_diffs(diff, original_asis)
         for rdiff in rdiffs:
             node_id, template_name = get_node_and_template_name(rdiff, original_asis)
-            prod.append({"node-id": node_id, "config": j2env.get_template(template_name).render(rdiff=rdiff)})
+            prod.append(
+                {
+                    "node-id": node_id,
+                    "config": j2env.get_template(template_name).render(rdiff=rdiff),
+                }
+            )
         print(json.dumps(prod, indent=2))
         exit(0)
