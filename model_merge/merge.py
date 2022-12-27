@@ -88,14 +88,12 @@ def get_diff(original_asis, patched_original_asis):
 def calc_reversed_diffs(diff, original_asis):
     def _list_worker(diff_item, oa, parent):
         oa_item = None
-        oa_key = None
         # TODO: check other ids
         for k in ["network-id", "node-id", "tp-id", "router-id"]:
             if k in diff_item:
                 for o in oa:
                     if o[k] == diff_item[k]:
                         oa_item = o
-                        oa_key = k
         if oa_item is None:
             raise Exception("diff is not subset of original")
         else:
@@ -108,24 +106,11 @@ def calc_reversed_diffs(diff, original_asis):
                 if k in ["network-id", "node-id", "tp-id", "router-id"]:
                     # skip "key" value
                     return prod, None
-                sub_prod, value = _worker(
-                    v, oa[k], diff | {"__original": oa[k], "__parent": parent}
-                )
+                sub_prod, value = _worker(v, oa[k], diff | {"__original": oa[k], "__parent": parent})
                 prod.extend(sub_prod)
                 if value is not None:
                     prod.append({k: value, "__original": oa[k], "__parent": parent})
             return prod, None
-            # return list(map(lambda kv: {kv[0]: kv[1], "__original": oa, "__parent": parent}, diff.items()))
-            return list(
-                map(
-                    lambda kv: {
-                        kv[0]: _worker(kv[1], oa[kv[0]], diff),
-                        "__original": "oa",
-                        "__parent": parent,
-                    },
-                    diff.items(),
-                )
-            )
         elif isinstance(diff, list):
             for item in diff:
                 sub_prod, value = _list_worker(item, oa, parent)
@@ -154,9 +139,9 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
                 original_asis["ietf-network:networks"]["network"],
             )
         )
-        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))[
-            "mddo-topology:l1-node-attributes"
-        ]["os-type"]
+        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))["mddo-topology:l1-node-attributes"][
+            "os-type"
+        ]
 
     def _get_key_names(rdiff, child={}):
         STOP_KEYS = ["mddo-topology:ospf-area-termination-point-attributes"]
@@ -189,10 +174,9 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print(
-            "usage: merge.py COMMAND original_asis.json emulated_asis.json emulated_tobe.json"
-        )
-        print("COMMAND: patch, config")
+        print("usage:")
+        print("merge.py patch original_asis.json emulated_asis.json emulated_tobe.json")
+        print("merge.py config original_asis.json emulated_asis.json emulated_tobe.json")
         exit(1)
     _, command, original_asis_file, emulated_asis_file, emulated_tobe_file = sys.argv
     original_asis, emulated_asis, emulated_tobe = map(
