@@ -1,0 +1,3697 @@
+{
+  "ietf-network:networks": {
+    "network": [
+      {
+        "network-id": "ospf_area0",
+        "network-types": {
+          "mddo-topology:ospf-area-network": {
+          }
+        },
+        "node": [
+          {
+            "node-id": "Seg_192.168.0.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regiona-rt2_ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_192.168.0.0/30",
+                    "tp-ref": "regiona-rt2_ge-0/0/0.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_192.168.0.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/0.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/1.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/1.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "1.1.1.1",
+                      "ip-address": "172.16.0.2/30"
+                    }
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/2.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/2.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "192.168.2.1",
+                      "ip-address": "172.16.1.2/30"
+                    }
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "regiona-rt1"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "ospf_proc",
+              "router-id": "10.10.10.10",
+              "process-id": "default",
+              "router-id-source": "static",
+              "log-adjacency-change": false,
+              "redistribute": [
+                {
+                  "protocol": "connected",
+                  "metric-type": 2
+                },
+                {
+                  "protocol": "static",
+                  "metric-type": 2
+                }
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.0.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt1_Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.0.0/30",
+                    "tp-ref": "regionb-rt1_Ethernet2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "regiona-rt1_ge-0/0/1.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.0.0/30",
+                    "tp-ref": "regiona-rt1_ge-0/0/1.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_172.16.0.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "10.10.10.10",
+                      "ip-address": "172.16.0.1/30"
+                    }
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet3",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet3"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "192.168.2.1",
+                      "ip-address": "172.16.2.2/30"
+                    }
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "1.1.1.2",
+                      "ip-address": "192.168.1.2/30"
+                    }
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "regionb-rt1"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "ospf_proc",
+              "router-id": "1.1.1.1",
+              "process-id": 1,
+              "router-id-source": "static",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.1.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionc-rt1_GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.1.0/30",
+                    "tp-ref": "regionc-rt1_GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "regiona-rt1_ge-0/0/2.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.1.0/30",
+                    "tp-ref": "regiona-rt1_ge-0/0/2.0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_172.16.1.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "10.10.10.10",
+                      "ip-address": "172.16.1.1/30"
+                    }
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "1.1.1.1",
+                      "ip-address": "172.16.2.1/30"
+                    }
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "regionc-rt1"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "ospf_proc",
+              "router-id": "192.168.2.1",
+              "process-id": 65000,
+              "router-id-source": "static",
+              "log-adjacency-change": false,
+              "redistribute": [
+                {
+                  "protocol": "connected",
+                  "metric-type": 2
+                }
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.2.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionc-rt2_GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_192.168.2.0/30",
+                    "tp-ref": "regionc-rt2_GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_192.168.2.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.2.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt1_Ethernet3",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.2.0/30",
+                    "tp-ref": "regionb-rt1_Ethernet3"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "regionc-rt1_GigabitEthernet0/0/0/2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_172.16.2.0/30",
+                    "tp-ref": "regionc-rt1_GigabitEthernet0/0/0/2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_172.16.2.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.1.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt2_Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_192.168.1.0/30",
+                    "tp-ref": "regionb-rt2_Ethernet1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "regionb-rt1_Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_192.168.1.0/30",
+                    "tp-ref": "regionb-rt1_Ethernet1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_192.168.1.0/30"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionb-rt2",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+                    {
+                      "router-id": "1.1.1.1",
+                      "ip-address": "192.168.1.1/30"
+                    }
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "regionb-rt2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "BROADCAST",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": true,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "regionb-rt2"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "ospf_proc",
+              "router-id": "1.1.1.2",
+              "process-id": 1,
+              "router-id-source": "static",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.254.0/24",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-svr01_ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer3",
+                    "node-ref": "Seg_192.168.254.0/24",
+                    "tp-ref": "regionb-svr01_ens2"
+                  }
+                ],
+                "mddo-topology:ospf-area-termination-point-attributes": {
+                  "network-type": "",
+                  "priority": 10,
+                  "metric": 1,
+                  "passive": false,
+                  "timer": {
+                    "hello-interval": 10,
+                    "dead-interval": 40,
+                    "retransmission-interval": 5
+                  },
+                  "neighbor": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer3",
+                "node-ref": "Seg_192.168.254.0/24"
+              }
+            ],
+            "mddo-topology:ospf-area-node-attributes": {
+              "node-type": "segment",
+              "router-id": "",
+              "process-id": "default",
+              "router-id-source": "auto",
+              "log-adjacency-change": false,
+              "redistribute": [
+
+              ]
+            }
+          }
+        ],
+        "ietf-network-topology:link": [
+          {
+            "link-id": "Seg_192.168.0.0/30,regiona-rt2_ge-0/0/0.0,regiona-rt1,ge-0/0/0.0",
+            "source": {
+              "source-node": "Seg_192.168.0.0/30",
+              "source-tp": "regiona-rt2_ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/0.0,Seg_192.168.0.0/30,regiona-rt2_ge-0/0/0.0",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.0.0/30",
+              "dest-tp": "regiona-rt2_ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.0.0/30,regionb-rt1_Ethernet2,regiona-rt1,ge-0/0/1.0",
+            "source": {
+              "source-node": "Seg_172.16.0.0/30",
+              "source-tp": "regionb-rt1_Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/1.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/1.0,Seg_172.16.0.0/30,regionb-rt1_Ethernet2",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/1.0"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.0.0/30",
+              "dest-tp": "regionb-rt1_Ethernet2"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.0.0/30,regiona-rt1_ge-0/0/1.0,regionb-rt1,Ethernet2",
+            "source": {
+              "source-node": "Seg_172.16.0.0/30",
+              "source-tp": "regiona-rt1_ge-0/0/1.0"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet2,Seg_172.16.0.0/30,regiona-rt1_ge-0/0/1.0",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.0.0/30",
+              "dest-tp": "regiona-rt1_ge-0/0/1.0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.1.0/30,regionc-rt1_GigabitEthernet0/0/0/1,regiona-rt1,ge-0/0/2.0",
+            "source": {
+              "source-node": "Seg_172.16.1.0/30",
+              "source-tp": "regionc-rt1_GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/2.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/2.0,Seg_172.16.1.0/30,regionc-rt1_GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/2.0"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.1.0/30",
+              "dest-tp": "regionc-rt1_GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.1.0/30,regiona-rt1_ge-0/0/2.0,regionc-rt1,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "Seg_172.16.1.0/30",
+              "source-tp": "regiona-rt1_ge-0/0/2.0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/1,Seg_172.16.1.0/30,regiona-rt1_ge-0/0/2.0",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.1.0/30",
+              "dest-tp": "regiona-rt1_ge-0/0/2.0"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.2.0/30,regionc-rt2_GigabitEthernet0/0/0/0,regionc-rt1,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "Seg_192.168.2.0/30",
+              "source-tp": "regionc-rt2_GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/0,Seg_192.168.2.0/30,regionc-rt2_GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.2.0/30",
+              "dest-tp": "regionc-rt2_GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.2.0/30,regionb-rt1_Ethernet3,regionc-rt1,GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "Seg_172.16.2.0/30",
+              "source-tp": "regionb-rt1_Ethernet3"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/2,Seg_172.16.2.0/30,regionb-rt1_Ethernet3",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.2.0/30",
+              "dest-tp": "regionb-rt1_Ethernet3"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.2.0/30,regionc-rt1_GigabitEthernet0/0/0/2,regionb-rt1,Ethernet3",
+            "source": {
+              "source-node": "Seg_172.16.2.0/30",
+              "source-tp": "regionc-rt1_GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet3"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet3,Seg_172.16.2.0/30,regionc-rt1_GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet3"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.2.0/30",
+              "dest-tp": "regionc-rt1_GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.1.0/30,regionb-rt2_Ethernet1,regionb-rt1,Ethernet1",
+            "source": {
+              "source-node": "Seg_192.168.1.0/30",
+              "source-tp": "regionb-rt2_Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet1,Seg_192.168.1.0/30,regionb-rt2_Ethernet1",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.1.0/30",
+              "dest-tp": "regionb-rt2_Ethernet1"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.1.0/30,regionb-rt1_Ethernet1,regionb-rt2,Ethernet1",
+            "source": {
+              "source-node": "Seg_192.168.1.0/30",
+              "source-tp": "regionb-rt1_Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet1,Seg_192.168.1.0/30,regionb-rt1_Ethernet1",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.1.0/30",
+              "dest-tp": "regionb-rt1_Ethernet1"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.254.0/24,regionb-svr01_ens2,regionb-rt2,Ethernet2",
+            "source": {
+              "source-node": "Seg_192.168.254.0/24",
+              "source-tp": "regionb-svr01_ens2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet2,Seg_192.168.254.0/24,regionb-svr01_ens2",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.254.0/24",
+              "dest-tp": "regionb-svr01_ens2"
+            }
+          }
+        ],
+        "supporting-network": [
+          {
+            "network-ref": "layer3"
+          }
+        ],
+        "mddo-topology:ospf-area-network-attributes": {
+          "name": "",
+          "identifier": "0.0.0.0",
+          "flag": [
+
+          ]
+        }
+      },
+      {
+        "network-id": "layer3",
+        "network-types": {
+          "mddo-topology:l3-network": {
+          }
+        },
+        "node": [
+          {
+            "node-id": "Seg_192.168.0.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regiona-rt2_ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt2_ge-0/0/0.0",
+                    "tp-ref": "ge-0/0/0.0"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regiona-rt1_ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/0.0",
+                    "tp-ref": "ge-0/0/0.0"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/0.0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt2_ge-0/0/0.0"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "192.168.0.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/0.0",
+                    "tp-ref": "ge-0/0/0.0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionA-RT2_ge-0/0/0",
+                  "ip-address": [
+                    "192.168.0.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/1.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/1.0",
+                    "tp-ref": "ge-0/0/1.0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet2",
+                  "ip-address": [
+                    "172.16.0.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/2.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/2.0",
+                    "tp-ref": "ge-0/0/2.0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/1",
+                  "ip-address": [
+                    "172.16.1.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/0.0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/1.0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/2.0"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "192.168.0.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "172.16.0.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "172.16.1.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "192.168.100.0/24",
+                  "next-hop": "192.168.0.2",
+                  "interface": "dynamic",
+                  "metric": 0,
+                  "preference": 5,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt2_ge-0/0/0.0",
+                    "tp-ref": "ge-0/0/0.0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/0",
+                  "ip-address": [
+                    "192.168.0.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt2_ge-0/0/0.0"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "192.168.0.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "0.0.0.0/0",
+                  "next-hop": "192.168.0.1",
+                  "interface": "dynamic",
+                  "metric": 0,
+                  "preference": 5,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.0.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt1_Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regiona-rt1_ge-0/0/1.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/1.0",
+                    "tp-ref": "ge-0/0/1.0"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/1.0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "172.16.0.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/1",
+                  "ip-address": [
+                    "172.16.0.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet3",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet3",
+                    "tp-ref": "Ethernet3"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/2",
+                  "ip-address": [
+                    "172.16.2.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionB-RT2_Ethernet1",
+                  "ip-address": [
+                    "192.168.1.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet2"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet3"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet1"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "172.16.0.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "172.16.2.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "192.168.1.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.1.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionc-rt1_GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regiona-rt1_ge-0/0/2.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regiona-rt1_ge-0/0/2.0",
+                    "tp-ref": "ge-0/0/2.0"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regiona-rt1_ge-0/0/2.0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/1"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "172.16.1.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/2",
+                  "ip-address": [
+                    "172.16.1.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/0",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionC-RT2_GigabitEthernet0/0/0/0",
+                  "ip-address": [
+                    "192.168.2.1/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/2",
+                    "tp-ref": "GigabitEthernet0/0/0/2"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet3",
+                  "ip-address": [
+                    "172.16.2.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/1"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "172.16.1.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "192.168.2.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "172.16.2.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "192.168.100.0/25",
+                  "next-hop": "192.168.2.2",
+                  "interface": "dynamic",
+                  "metric": 0,
+                  "preference": 1,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.2.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionc-rt2_GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt2_GigabitEthernet0/0/0/0",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regionc-rt1_GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/0",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt2_GigabitEthernet0/0/0/0"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "192.168.2.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt2_GigabitEthernet0/0/0/0",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/0",
+                  "ip-address": [
+                    "192.168.2.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt2_GigabitEthernet0/0/0/1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionC-Svr01_ens2",
+                  "ip-address": [
+                    "192.168.100.1/25"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt2_GigabitEthernet0/0/0/0"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt2_GigabitEthernet0/0/0/1"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "192.168.2.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "192.168.100.0/25",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "0.0.0.0/0",
+                  "next-hop": "192.168.2.1",
+                  "interface": "dynamic",
+                  "metric": 0,
+                  "preference": 1,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_172.16.2.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt1_Ethernet3",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet3",
+                    "tp-ref": "Ethernet3"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regionc-rt1_GigabitEthernet0/0/0/2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt1_GigabitEthernet0/0/0/2",
+                    "tp-ref": "GigabitEthernet0/0/0/2"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt1_GigabitEthernet0/0/0/2"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet3"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "172.16.2.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.100.0/25",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionc-svr01_ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-svr01_ens2",
+                    "tp-ref": "ens2"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regionc-rt2_GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-rt2_GigabitEthernet0/0/0/1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-rt2_GigabitEthernet0/0/0/1"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-svr01_ens2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "192.168.100.0/25",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-svr01",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionc-svr01_ens2",
+                    "tp-ref": "ens2"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "",
+                  "ip-address": [
+                    "192.168.100.10/25"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionc-svr01_ens2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "endpoint",
+              "prefix": [
+                {
+                  "prefix": "192.168.100.0/25",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "0.0.0.0/0",
+                  "next-hop": "192.168.100.1",
+                  "interface": "ens2",
+                  "metric": 0,
+                  "preference": 1,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.1.0/30",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-rt2_Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt2_Ethernet1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regionb-rt1_Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt1_Ethernet1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt1_Ethernet1"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt2_Ethernet1"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "192.168.1.0/30",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt2_Ethernet1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet1",
+                  "ip-address": [
+                    "192.168.1.2/30"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt2_Ethernet2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "to_RegionB-Svr01_ens2",
+                  "ip-address": [
+                    "192.168.254.1/24"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt2_Ethernet1"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt2_Ethernet2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "node",
+              "prefix": [
+                {
+                  "prefix": "192.168.1.0/30",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                },
+                {
+                  "prefix": "192.168.254.0/24",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "Seg_192.168.254.0/24",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "regionb-svr01_ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-svr01_ens2",
+                    "tp-ref": "ens2"
+                  }
+                ]
+              },
+              {
+                "tp-id": "regionb-rt2_Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-rt2_Ethernet2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ]
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-rt2_Ethernet2"
+              },
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-svr01_ens2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "segment",
+              "prefix": [
+                {
+                  "prefix": "192.168.254.0/24",
+                  "metric": 0,
+                  "flag": [
+
+                  ]
+                }
+              ],
+              "static-route": [
+
+              ],
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-svr01",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer2",
+                    "node-ref": "regionb-svr01_ens2",
+                    "tp-ref": "ens2"
+                  }
+                ],
+                "mddo-topology:l3-termination-point-attributes": {
+                  "description": "",
+                  "ip-address": [
+                    "192.168.254.10/24"
+                  ],
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer2",
+                "node-ref": "regionb-svr01_ens2"
+              }
+            ],
+            "mddo-topology:l3-node-attributes": {
+              "node-type": "endpoint",
+              "prefix": [
+                {
+                  "prefix": "192.168.254.0/24",
+                  "metric": 0,
+                  "flag": [
+                    "connected"
+                  ]
+                }
+              ],
+              "static-route": [
+                {
+                  "prefix": "0.0.0.0/0",
+                  "next-hop": "192.168.254.1",
+                  "interface": "ens2",
+                  "metric": 0,
+                  "preference": 1,
+                  "description": ""
+                }
+              ],
+              "flag": [
+
+              ]
+            }
+          }
+        ],
+        "ietf-network-topology:link": [
+          {
+            "link-id": "Seg_192.168.0.0/30,regiona-rt2_ge-0/0/0.0,regiona-rt1,ge-0/0/0.0",
+            "source": {
+              "source-node": "Seg_192.168.0.0/30",
+              "source-tp": "regiona-rt2_ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/0.0,Seg_192.168.0.0/30,regiona-rt2_ge-0/0/0.0",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.0.0/30",
+              "dest-tp": "regiona-rt2_ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.0.0/30,regiona-rt1_ge-0/0/0.0,regiona-rt2,ge-0/0/0.0",
+            "source": {
+              "source-node": "Seg_192.168.0.0/30",
+              "source-tp": "regiona-rt1_ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt2",
+              "dest-tp": "ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt2,ge-0/0/0.0,Seg_192.168.0.0/30,regiona-rt1_ge-0/0/0.0",
+            "source": {
+              "source-node": "regiona-rt2",
+              "source-tp": "ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.0.0/30",
+              "dest-tp": "regiona-rt1_ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.0.0/30,regionb-rt1_Ethernet2,regiona-rt1,ge-0/0/1.0",
+            "source": {
+              "source-node": "Seg_172.16.0.0/30",
+              "source-tp": "regionb-rt1_Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/1.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/1.0,Seg_172.16.0.0/30,regionb-rt1_Ethernet2",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/1.0"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.0.0/30",
+              "dest-tp": "regionb-rt1_Ethernet2"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.0.0/30,regiona-rt1_ge-0/0/1.0,regionb-rt1,Ethernet2",
+            "source": {
+              "source-node": "Seg_172.16.0.0/30",
+              "source-tp": "regiona-rt1_ge-0/0/1.0"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet2,Seg_172.16.0.0/30,regiona-rt1_ge-0/0/1.0",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.0.0/30",
+              "dest-tp": "regiona-rt1_ge-0/0/1.0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.1.0/30,regionc-rt1_GigabitEthernet0/0/0/1,regiona-rt1,ge-0/0/2.0",
+            "source": {
+              "source-node": "Seg_172.16.1.0/30",
+              "source-tp": "regionc-rt1_GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/2.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/2.0,Seg_172.16.1.0/30,regionc-rt1_GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/2.0"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.1.0/30",
+              "dest-tp": "regionc-rt1_GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.1.0/30,regiona-rt1_ge-0/0/2.0,regionc-rt1,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "Seg_172.16.1.0/30",
+              "source-tp": "regiona-rt1_ge-0/0/2.0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/1,Seg_172.16.1.0/30,regiona-rt1_ge-0/0/2.0",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.1.0/30",
+              "dest-tp": "regiona-rt1_ge-0/0/2.0"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.2.0/30,regionc-rt2_GigabitEthernet0/0/0/0,regionc-rt1,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "Seg_192.168.2.0/30",
+              "source-tp": "regionc-rt2_GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/0,Seg_192.168.2.0/30,regionc-rt2_GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.2.0/30",
+              "dest-tp": "regionc-rt2_GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.2.0/30,regionc-rt1_GigabitEthernet0/0/0/0,regionc-rt2,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "Seg_192.168.2.0/30",
+              "source-tp": "regionc-rt1_GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt2,GigabitEthernet0/0/0/0,Seg_192.168.2.0/30,regionc-rt1_GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt2",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.2.0/30",
+              "dest-tp": "regionc-rt1_GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.2.0/30,regionb-rt1_Ethernet3,regionc-rt1,GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "Seg_172.16.2.0/30",
+              "source-tp": "regionb-rt1_Ethernet3"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/2,Seg_172.16.2.0/30,regionb-rt1_Ethernet3",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.2.0/30",
+              "dest-tp": "regionb-rt1_Ethernet3"
+            }
+          },
+          {
+            "link-id": "Seg_172.16.2.0/30,regionc-rt1_GigabitEthernet0/0/0/2,regionb-rt1,Ethernet3",
+            "source": {
+              "source-node": "Seg_172.16.2.0/30",
+              "source-tp": "regionc-rt1_GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet3"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet3,Seg_172.16.2.0/30,regionc-rt1_GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet3"
+            },
+            "destination": {
+              "dest-node": "Seg_172.16.2.0/30",
+              "dest-tp": "regionc-rt1_GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.100.0/25,regionc-svr01_ens2,regionc-rt2,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "Seg_192.168.100.0/25",
+              "source-tp": "regionc-svr01_ens2"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionc-rt2,GigabitEthernet0/0/0/1,Seg_192.168.100.0/25,regionc-svr01_ens2",
+            "source": {
+              "source-node": "regionc-rt2",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.100.0/25",
+              "dest-tp": "regionc-svr01_ens2"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.100.0/25,regionc-rt2_GigabitEthernet0/0/0/1,regionc-svr01,ens2",
+            "source": {
+              "source-node": "Seg_192.168.100.0/25",
+              "source-tp": "regionc-rt2_GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regionc-svr01",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionc-svr01,ens2,Seg_192.168.100.0/25,regionc-rt2_GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regionc-svr01",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.100.0/25",
+              "dest-tp": "regionc-rt2_GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.1.0/30,regionb-rt2_Ethernet1,regionb-rt1,Ethernet1",
+            "source": {
+              "source-node": "Seg_192.168.1.0/30",
+              "source-tp": "regionb-rt2_Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet1,Seg_192.168.1.0/30,regionb-rt2_Ethernet1",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.1.0/30",
+              "dest-tp": "regionb-rt2_Ethernet1"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.1.0/30,regionb-rt1_Ethernet1,regionb-rt2,Ethernet1",
+            "source": {
+              "source-node": "Seg_192.168.1.0/30",
+              "source-tp": "regionb-rt1_Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet1,Seg_192.168.1.0/30,regionb-rt1_Ethernet1",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.1.0/30",
+              "dest-tp": "regionb-rt1_Ethernet1"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.254.0/24,regionb-svr01_ens2,regionb-rt2,Ethernet2",
+            "source": {
+              "source-node": "Seg_192.168.254.0/24",
+              "source-tp": "regionb-svr01_ens2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet2,Seg_192.168.254.0/24,regionb-svr01_ens2",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.254.0/24",
+              "dest-tp": "regionb-svr01_ens2"
+            }
+          },
+          {
+            "link-id": "Seg_192.168.254.0/24,regionb-rt2_Ethernet2,regionb-svr01,ens2",
+            "source": {
+              "source-node": "Seg_192.168.254.0/24",
+              "source-tp": "regionb-rt2_Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regionb-svr01",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionb-svr01,ens2,Seg_192.168.254.0/24,regionb-rt2_Ethernet2",
+            "source": {
+              "source-node": "regionb-svr01",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "Seg_192.168.254.0/24",
+              "dest-tp": "regionb-rt2_Ethernet2"
+            }
+          }
+        ],
+        "supporting-network": [
+          {
+            "network-ref": "layer2"
+          }
+        ]
+      },
+      {
+        "network-id": "layer2",
+        "network-types": {
+          "mddo-topology:l2-network": {
+          }
+        },
+        "node": [
+          {
+            "node-id": "regiona-rt1_ge-0/0/0.0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/0"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionA-RT2_ge-0/0/0",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regiona-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regiona-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt2_ge-0/0/0.0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regiona-rt2",
+                    "tp-ref": "ge-0/0/0"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/0",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regiona-rt2"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regiona-rt2",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt1_ge-0/0/1.0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/1.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/1"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet2",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regiona-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regiona-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1_Ethernet2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/1",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt1_ge-0/0/2.0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/2.0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regiona-rt1",
+                    "tp-ref": "ge-0/0/2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/1",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regiona-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regiona-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1_GigabitEthernet0/0/0/1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/2",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1_GigabitEthernet0/0/0/0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionC-RT2_GigabitEthernet0/0/0/0",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt2_GigabitEthernet0/0/0/0",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-rt2",
+                    "tp-ref": "GigabitEthernet0/0/0/0"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/0",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-rt2"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-rt2",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1_GigabitEthernet0/0/0/2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-rt1",
+                    "tp-ref": "GigabitEthernet0/0/0/2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet3",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1_Ethernet3",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet3",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet3"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/2",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt2_GigabitEthernet0/0/0/1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-rt2",
+                    "tp-ref": "GigabitEthernet0/0/0/1"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionC-Svr01_ens2",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-rt2"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-rt2",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-svr01_ens2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionc-svr01",
+                    "tp-ref": "ens2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionc-svr01"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionc-svr01",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1_Ethernet1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-rt1",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionB-RT2_Ethernet1",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-rt1"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-rt1",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt2_Ethernet1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet1",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-rt2",
+                    "tp-ref": "Ethernet1"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet1",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-rt2"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-rt2",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt2_Ethernet2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-rt2",
+                    "tp-ref": "Ethernet2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "to_RegionB-Svr01_ens2",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-rt2"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-rt2",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-svr01_ens2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2",
+                "supporting-termination-point": [
+                  {
+                    "network-ref": "layer1",
+                    "node-ref": "regionb-svr01",
+                    "tp-ref": "ens2"
+                  }
+                ],
+                "mddo-topology:l2-termination-point-attributes": {
+                  "description": "",
+                  "encapsulation": "",
+                  "switchport-mode": "none",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "supporting-node": [
+              {
+                "network-ref": "layer1",
+                "node-ref": "regionb-svr01"
+              }
+            ],
+            "mddo-topology:l2-node-attributes": {
+              "name": "regionb-svr01",
+              "vlan-id": 0,
+              "flag": [
+
+              ]
+            }
+          }
+        ],
+        "ietf-network-topology:link": [
+          {
+            "link-id": "regiona-rt1_ge-0/0/0.0,ge-0/0/0.0,regiona-rt2_ge-0/0/0.0,ge-0/0/0.0",
+            "source": {
+              "source-node": "regiona-rt1_ge-0/0/0.0",
+              "source-tp": "ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt2_ge-0/0/0.0",
+              "dest-tp": "ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt2_ge-0/0/0.0,ge-0/0/0.0,regiona-rt1_ge-0/0/0.0,ge-0/0/0.0",
+            "source": {
+              "source-node": "regiona-rt2_ge-0/0/0.0",
+              "source-tp": "ge-0/0/0.0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1_ge-0/0/0.0",
+              "dest-tp": "ge-0/0/0.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1_ge-0/0/1.0,ge-0/0/1.0,regionb-rt1_Ethernet2,Ethernet2",
+            "source": {
+              "source-node": "regiona-rt1_ge-0/0/1.0",
+              "source-tp": "ge-0/0/1.0"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1_Ethernet2",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt1_Ethernet2,Ethernet2,regiona-rt1_ge-0/0/1.0,ge-0/0/1.0",
+            "source": {
+              "source-node": "regionb-rt1_Ethernet2",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1_ge-0/0/1.0",
+              "dest-tp": "ge-0/0/1.0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1_ge-0/0/2.0,ge-0/0/2.0,regionc-rt1_GigabitEthernet0/0/0/1,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regiona-rt1_ge-0/0/2.0",
+              "source-tp": "ge-0/0/2.0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1_GigabitEthernet0/0/0/1",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionc-rt1_GigabitEthernet0/0/0/1,GigabitEthernet0/0/0/1,regiona-rt1_ge-0/0/2.0,ge-0/0/2.0",
+            "source": {
+              "source-node": "regionc-rt1_GigabitEthernet0/0/0/1",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1_ge-0/0/2.0",
+              "dest-tp": "ge-0/0/2.0"
+            }
+          },
+          {
+            "link-id": "regionc-rt1_GigabitEthernet0/0/0/0,GigabitEthernet0/0/0/0,regionc-rt2_GigabitEthernet0/0/0/0,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt1_GigabitEthernet0/0/0/0",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2_GigabitEthernet0/0/0/0",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt2_GigabitEthernet0/0/0/0,GigabitEthernet0/0/0/0,regionc-rt1_GigabitEthernet0/0/0/0,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt2_GigabitEthernet0/0/0/0",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1_GigabitEthernet0/0/0/0",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt1_GigabitEthernet0/0/0/2,GigabitEthernet0/0/0/2,regionb-rt1_Ethernet3,Ethernet3",
+            "source": {
+              "source-node": "regionc-rt1_GigabitEthernet0/0/0/2",
+              "source-tp": "GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1_Ethernet3",
+              "dest-tp": "Ethernet3"
+            }
+          },
+          {
+            "link-id": "regionb-rt1_Ethernet3,Ethernet3,regionc-rt1_GigabitEthernet0/0/0/2,GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "regionb-rt1_Ethernet3",
+              "source-tp": "Ethernet3"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1_GigabitEthernet0/0/0/2",
+              "dest-tp": "GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "regionc-rt2_GigabitEthernet0/0/0/1,GigabitEthernet0/0/0/1,regionc-svr01_ens2,ens2",
+            "source": {
+              "source-node": "regionc-rt2_GigabitEthernet0/0/0/1",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regionc-svr01_ens2",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionc-svr01_ens2,ens2,regionc-rt2_GigabitEthernet0/0/0/1,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regionc-svr01_ens2",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2_GigabitEthernet0/0/0/1",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionb-rt1_Ethernet1,Ethernet1,regionb-rt2_Ethernet1,Ethernet1",
+            "source": {
+              "source-node": "regionb-rt1_Ethernet1",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2_Ethernet1",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2_Ethernet1,Ethernet1,regionb-rt1_Ethernet1,Ethernet1",
+            "source": {
+              "source-node": "regionb-rt2_Ethernet1",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1_Ethernet1",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2_Ethernet2,Ethernet2,regionb-svr01_ens2,ens2",
+            "source": {
+              "source-node": "regionb-rt2_Ethernet2",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regionb-svr01_ens2",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionb-svr01_ens2,ens2,regionb-rt2_Ethernet2,Ethernet2",
+            "source": {
+              "source-node": "regionb-svr01_ens2",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2_Ethernet2",
+              "dest-tp": "Ethernet2"
+            }
+          }
+        ],
+        "supporting-network": [
+          {
+            "network-ref": "layer1"
+          }
+        ]
+      },
+      {
+        "network-id": "layer1",
+        "network-types": {
+          "mddo-topology:l1-network": {
+          }
+        },
+        "node": [
+          {
+            "node-id": "regiona-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionA-RT2_ge-0/0/0",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/1",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet2",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "ge-0/0/2",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/1",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "juniper",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regiona-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ge-0/0/0",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/0",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "juniper",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet2",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/1",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet3",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/2",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet1",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionB-RT2_Ethernet1",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "arista",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt1",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionA-RT1_ge-0/0/2",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionC-RT2_GigabitEthernet0/0/0/0",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/2",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet3",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "cisco_ios_xr",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "GigabitEthernet0/0/0/0",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionC-RT1_GigabitEthernet0/0/0/0",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "GigabitEthernet0/0/0/1",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionC-Svr01_ens2",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "cisco_ios_xr",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionc-svr01",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2"
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "host",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-rt2",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "Ethernet1",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionB-RT1_Ethernet1",
+                  "flag": [
+
+                  ]
+                }
+              },
+              {
+                "tp-id": "Ethernet2",
+                "mddo-topology:l1-termination-point-attributes": {
+                  "description": "to_RegionB-Svr01_ens2",
+                  "flag": [
+
+                  ]
+                }
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "arista",
+              "flag": [
+
+              ]
+            }
+          },
+          {
+            "node-id": "regionb-svr01",
+            "ietf-network-topology:termination-point": [
+              {
+                "tp-id": "ens2"
+              }
+            ],
+            "mddo-topology:l1-node-attributes": {
+              "os-type": "host",
+              "flag": [
+
+              ]
+            }
+          }
+        ],
+        "ietf-network-topology:link": [
+          {
+            "link-id": "regiona-rt1,ge-0/0/0,regiona-rt2,ge-0/0/0",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt2",
+              "dest-tp": "ge-0/0/0"
+            }
+          },
+          {
+            "link-id": "regiona-rt2,ge-0/0/0,regiona-rt1,ge-0/0/0",
+            "source": {
+              "source-node": "regiona-rt2",
+              "source-tp": "ge-0/0/0"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/0"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/1,regionb-rt1,Ethernet2",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet2"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet2,regiona-rt1,ge-0/0/1",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/1"
+            }
+          },
+          {
+            "link-id": "regiona-rt1,ge-0/0/2,regionc-rt1,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regiona-rt1",
+              "source-tp": "ge-0/0/2"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/1,regiona-rt1,ge-0/0/2",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regiona-rt1",
+              "dest-tp": "ge-0/0/2"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/0,regionc-rt2,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt2,GigabitEthernet0/0/0/0,regionc-rt1,GigabitEthernet0/0/0/0",
+            "source": {
+              "source-node": "regionc-rt2",
+              "source-tp": "GigabitEthernet0/0/0/0"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/0"
+            }
+          },
+          {
+            "link-id": "regionc-rt1,GigabitEthernet0/0/0/2,regionb-rt1,Ethernet3",
+            "source": {
+              "source-node": "regionc-rt1",
+              "source-tp": "GigabitEthernet0/0/0/2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet3"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet3,regionc-rt1,GigabitEthernet0/0/0/2",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet3"
+            },
+            "destination": {
+              "dest-node": "regionc-rt1",
+              "dest-tp": "GigabitEthernet0/0/0/2"
+            }
+          },
+          {
+            "link-id": "regionc-rt2,GigabitEthernet0/0/0/1,regionc-svr01,ens2",
+            "source": {
+              "source-node": "regionc-rt2",
+              "source-tp": "GigabitEthernet0/0/0/1"
+            },
+            "destination": {
+              "dest-node": "regionc-svr01",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionc-svr01,ens2,regionc-rt2,GigabitEthernet0/0/0/1",
+            "source": {
+              "source-node": "regionc-svr01",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "regionc-rt2",
+              "dest-tp": "GigabitEthernet0/0/0/1"
+            }
+          },
+          {
+            "link-id": "regionb-rt1,Ethernet1,regionb-rt2,Ethernet1",
+            "source": {
+              "source-node": "regionb-rt1",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet1,regionb-rt1,Ethernet1",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet1"
+            },
+            "destination": {
+              "dest-node": "regionb-rt1",
+              "dest-tp": "Ethernet1"
+            }
+          },
+          {
+            "link-id": "regionb-rt2,Ethernet2,regionb-svr01,ens2",
+            "source": {
+              "source-node": "regionb-rt2",
+              "source-tp": "Ethernet2"
+            },
+            "destination": {
+              "dest-node": "regionb-svr01",
+              "dest-tp": "ens2"
+            }
+          },
+          {
+            "link-id": "regionb-svr01,ens2,regionb-rt2,Ethernet2",
+            "source": {
+              "source-node": "regionb-svr01",
+              "source-tp": "ens2"
+            },
+            "destination": {
+              "dest-node": "regionb-rt2",
+              "dest-tp": "Ethernet2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
