@@ -1,6 +1,30 @@
 # model-merge
 
-## patch
+## using two topology.json (original_asis, original_tobe) files
+
+### config
+
+* to generate candidate config from diff(s) between original_asis and original_tobe
+* original_asis must contain L1 info to determine node OS type, however original_tobe not have to contain it, because of the layers which exist only in original_asis are ignored
+
+usage and example:
+```
+model_merge# python config.py ../tests/testdata/mddo-ospf/original_asis.json ../tests/testdata/mddo-ospf/original_tobe_l3over.json
+[
+  {
+    "node-id": "rt2",
+    "config": "set protocol ospf area 0.0.0.0 interface eth1.0 metric 4"
+  },
+  {
+    "node-id": "rt2",
+    "config": "set protocol ospf area 0.0.0.0 interface eth1.0 dead-interval 45"
+  }
+]
+```
+
+## using three topology.json (original_asis, emulated_asis, emulated_tobe) files
+
+### patch
 
 apply diffs between emultated_{asis,tobe} to original_asis
 
@@ -26,7 +50,7 @@ model_merge$ diff -du ../tests/testdata/mddo-ospf/{,patched_}original_asis.json
 ```
 
 
-## config
+### config
 
 generate candidate config to apply avobe diffs
 
