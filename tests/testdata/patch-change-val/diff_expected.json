@@ -1,0 +1,15 @@
+{
+  "key-a": {
+    "key-a-a": [
+      {
+        "network-id": "key-a-a-1-id",
+        "key-a-a-1-c": [
+          {
+            "node-id": "key-a-a-1-c-1-id",
+            "key-a-a-1-c-1-b": "changed-of-a-a-1-c-1-b"
+          }
+        ]
+      }
+    ]
+  }
+}
