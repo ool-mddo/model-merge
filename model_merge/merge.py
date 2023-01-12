@@ -17,10 +17,11 @@ def patch(original_asis, emulated_asis, emulated_tobe):
                 for e in et:
                     if e[k] == oa_item[k]:
                         et_item = e
-        if ea_item is None or et_item is None: # TODO: deletion?
+        if ea_item is None or et_item is None:  # TODO: deletion?
             return oa_item
         else:
             return _worker(oa_item, ea_item, et_item)
+
     def _get_list_keys(target):
         prod = set()
         for t in target:
@@ -28,6 +29,7 @@ def patch(original_asis, emulated_asis, emulated_tobe):
                 if k in t:
                     prod.add(t[k])
         return prod
+
     def _worker(oa, ea, et):
         if isinstance(oa, dict):
             new_var = {}
@@ -62,10 +64,11 @@ def get_diff(original_asis, patched_original_asis):
                     if p[k] == oa_item[k]:
                         poa_item = p
                         poa_key = k
-        if poa_item is None: # TODO: deletion
+        if poa_item is None:  # TODO: deletion
             return (None, False), None, None
         else:
             return _worker(oa_item, poa_item), poa_key, oa_item[poa_key]
+
     def _get_list_keys(target):
         prod = set()
         for t in target:
@@ -73,6 +76,7 @@ def get_diff(original_asis, patched_original_asis):
                 if k in t:
                     prod.add(t[k])
         return prod
+
     def _worker(oa, poa):
         if isinstance(oa, dict):
             new_var = {}
@@ -89,8 +93,14 @@ def get_diff(original_asis, patched_original_asis):
             addition = poa_keys - oa_keys
             if addition:
                 new_var.extend(list(filter(lambda i: _get_list_keys([i]) & addition, poa)))
-            new_var.extend(list(map(lambda x: x[0][0] | {x[1]: x[2]},
-                filter(lambda x: x[0][1], [_list_worker(oa_item, poa) for oa_item in oa]))))
+            new_var.extend(
+                list(
+                    map(
+                        lambda x: x[0][0] | {x[1]: x[2]},
+                        filter(lambda x: x[0][1], [_list_worker(oa_item, poa) for oa_item in oa]),
+                    )
+                )
+            )
             if len(new_var) != 0:
                 return new_var, True
         else:
@@ -151,8 +161,11 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
 
     def _get_os_type(original_asis, nodename):
         L1topo = next(filter(lambda x: x["network-id"] == "layer1", original_asis["ietf-network:networks"]["network"]))
-        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))["mddo-topology:l1-node-attributes"]["os-type"]
-    def _get_key_names(rdiff, child = {}):
+        return next(filter(lambda x: x["node-id"] == nodename, L1topo["node"]))["mddo-topology:l1-node-attributes"][
+            "os-type"
+        ]
+
+    def _get_key_names(rdiff, child={}):
         STOP_KEYS = ["mddo-topology:ospf-area-termination-point-attributes", "mddo-topology:ospf-area-node-attributes"]
         ID_KEYS = set(["network-id", "node-id", "tp-id", "router-id", "protocol"])
         if not child:
