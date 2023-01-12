@@ -105,7 +105,7 @@ def calc_reversed_diffs(diff, original_asis):
             for k, v in diff.items():
                 if k in ["network-id", "node-id", "tp-id", "router-id"]:
                     # skip "key" value
-                    return prod, None
+                    continue
                 sub_prod, value = _worker(v, oa[k], diff | {"__original": oa[k], "__parent": parent})
                 prod.extend(sub_prod)
                 if value is not None:
