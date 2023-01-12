@@ -1,0 +1,10 @@
+{
+    "key-a": {
+      "key-a-a": {
+        "key-a-a-a": "original-of-a-a-a",
+        "key-a-a-b": "original-of-a-a-b"
+      },
+      "key-a-b": "original-of-a-b"
+    }
+  }
+  

@@ -1,0 +1,44 @@
+{
+  "key-a": {
+    "key-a-a": [
+      {
+        "network-id": "key-a-a-1-id",
+        "key-a-a-1-a": "original-of-a-a-1-a",
+        "key-a-a-1-b": {
+          "key-a-a-1-b-a": "original-of-a-a-1-b-a"
+        },
+        "key-a-a-1-c": [
+          {
+            "node-id": "key-a-a-1-c-1-id",
+            "key-a-a-1-c-1-a": "original-of-a-a-1-c-1-a",
+            "key-a-a-1-c-1-b": "original-of-a-a-1-c-1-b"
+          },
+          {
+            "node-id": "key-a-a-1-c-2-id",
+            "key-a-a-1-c-2-a": "original-of-a-a-1-c-2-a",
+            "key-a-a-1-c-2-b": "original-of-a-a-1-c-2-b"
+          }
+        ]
+      },
+      {
+        "network-id": "key-a-a-2-id",
+        "key-a-a-2-a": "original-of-a-a-2-a",
+        "key-a-a-2-b": {
+          "key-a-a-2-b-a": "original-of-a-a-2-b-a"
+        },
+        "key-a-a-2-c": [
+          {
+            "node-id": "key-a-a-2-c-1-id",
+            "key-a-a-2-c-1-a": "original-of-a-a-2-c-1-a",
+            "key-a-a-2-c-1-b": "original-of-a-a-2-c-1-b"
+          },
+          {
+            "node-id": "key-a-a-2-c-2-id",
+            "key-a-a-2-c-2-a": "original-of-a-a-2-c-2-a",
+            "key-a-a-2-c-2-b": "original-of-a-a-2-c-2-b"
+          }
+        ]
+      }
+    ]
+  }
+}
