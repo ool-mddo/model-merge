@@ -3,13 +3,15 @@ import sys
 from jinja2 import Environment, FileSystemLoader
 from os import path
 
+ID_KEYS = set(["network-id", "node-id", "tp-id", "router-id", "protocol"])
+SKIP_KEYS = set(["supporting-node", "supporting-termination-point", "description"])
+
 
 def patch(original_asis, emulated_asis, emulated_tobe):
     def _list_worker(oa_item, ea, et):
         ea_item = None
         et_item = None
-        # TODO: check other ids
-        for k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+        for k in ID_KEYS:
             if k in oa_item:
                 for e in ea:
                     if e[k] == oa_item[k]:
@@ -25,7 +27,7 @@ def patch(original_asis, emulated_asis, emulated_tobe):
     def _get_list_keys(target):
         prod = set()
         for t in target:
-            for k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+            for k in ID_KEYS:
                 if k in t:
                     prod.add(t[k])
         return prod
@@ -34,6 +36,8 @@ def patch(original_asis, emulated_asis, emulated_tobe):
         if isinstance(oa, dict):
             new_var = {}
             for k in oa.keys():
+                if k in SKIP_KEYS:
+                    continue
                 new_var[k] = _worker(oa[k], ea[k], et[k])
         elif isinstance(oa, list):
             new_var = []
@@ -57,8 +61,7 @@ def get_diff(original_asis, patched_original_asis):
     def _list_worker(oa_item, poa):
         poa_item = None
         poa_key = None
-        # TODO: check other ids
-        for k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+        for k in ID_KEYS:
             if k in oa_item:
                 for p in poa:
                     if p[k] == oa_item[k]:
@@ -72,7 +75,7 @@ def get_diff(original_asis, patched_original_asis):
     def _get_list_keys(target):
         prod = set()
         for t in target:
-            for k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+            for k in ID_KEYS:
                 if k in t:
                     prod.add(t[k])
         return prod
@@ -81,6 +84,8 @@ def get_diff(original_asis, patched_original_asis):
         if isinstance(oa, dict):
             new_var = {}
             for k in oa.keys():
+                if k in SKIP_KEYS:
+                    continue
                 new_var[k], res = _worker(oa[k], poa[k])
                 if not (res):
                     new_var.pop(k)
@@ -116,7 +121,7 @@ def calc_reversed_diffs(diff, original_asis):
     def _list_worker(diff_item, oa, parent):
         oa_item = None
         # TODO: check other ids
-        for k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+        for k in ID_KEYS:
             if k in diff_item:
                 for o in oa:
                     if o[k] == diff_item[k]:
@@ -130,7 +135,7 @@ def calc_reversed_diffs(diff, original_asis):
         prod = []
         if isinstance(diff, dict):
             for k, v in diff.items():
-                if k in ["network-id", "node-id", "tp-id", "router-id", "protocol"]:
+                if k in ID_KEYS:
                     # skip "key" value
                     continue
                 sub_prod, value = _worker(v, oa[k], diff | {"__original": oa[k], "__parent": parent})
@@ -166,8 +171,9 @@ def get_node_and_template_name(reversed_diff_item, original_asis):
         ]
 
     def _get_key_names(rdiff, child={}):
-        STOP_KEYS = ["mddo-topology:ospf-area-termination-point-attributes", "mddo-topology:ospf-area-node-attributes"]
-        ID_KEYS = set(["network-id", "node-id", "tp-id", "router-id", "protocol"])
+        STOP_KEYS = set(
+            ["mddo-topology:ospf-area-termination-point-attributes", "mddo-topology:ospf-area-node-attributes"]
+        )
         if not child:
             # top-level (most detailed) diff
             # must be 1 key
